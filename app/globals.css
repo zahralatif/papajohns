@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 
 .logo {
@@ -85,10 +86,42 @@ li:hover {
   line-height: 26px;
   font-weight: 700;
   color: #FFFFFF;
+  background-color: transparent !important;
+  ;
   text-transform: uppercase;
 }
 
 .nav-img {
   display: block;
   padding-bottom: 30px;
+}
+
+.menu-detail {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 95%;
+  margin: 0 13px;
+  margin-bottom: 40px;
+}
+
+.menu-detail div {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  padding: 0 13px 37px;
+}
+
+.menu-detail h2 {
+  font-weight: bold;
+  font-size: 22px;
+  color: #171717;
+  line-height: 25px;
+}
+
+.menu-detail p{
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #282828;
+  letter-spacing: 0px;
+  line-height: 20px;
 }
