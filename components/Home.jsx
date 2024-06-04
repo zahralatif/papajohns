@@ -14,8 +14,10 @@ const Home = ({ selectedMenuItem }) => {
         try {
           console.log(`Fetching data for: ${selectedMenuItem}`);
           const response = await fetchData(`https://api.mirafgan.me/papajohns/${selectedMenuItem}`);
+          console.log('Fetched data:', response);
           setData(response);
         } catch (err) {
+          console.error('Error fetching data:', err);
           setError(err.message);
         }
       };
@@ -36,8 +38,7 @@ const Home = ({ selectedMenuItem }) => {
           {data.map(item => (
             <div key={item.id}>
               <h2>{item.name}</h2>
-              {/* <img src={item.img} alt={item.name} /> */}
-              <Image src={item.img} alt={item.name} ></Image>
+              <Image src={item.img} alt={item.name} width={500} height={500} />
               <p>{item.composition}</p>
               <p>Price: ${item.price}</p>
             </div>
