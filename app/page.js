@@ -6,8 +6,8 @@ import Image from 'next/image';
 import Spinner from './Spinner';
 
 const Home = ({ selectedMenuItem }) => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+  const [data, setData] = useState();
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchDataForDefaultMenu = async () => {

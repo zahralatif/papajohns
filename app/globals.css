@@ -34,7 +34,7 @@ li:hover {
   margin-right: 3px;
   width: 10px;
   height: 60px;
-  background-color: blueviolet;
+  background-color: #AD0F14;
   animation: left 1s linear infinite;
 }
 
@@ -42,7 +42,7 @@ li:hover {
   margin-left: 3px;
   width: 10px;
   height: 60px;
-  background-color: blueviolet;
+  background-color: #AD0F14;
   animation: right 1s linear infinite;
 }
 
@@ -72,4 +72,23 @@ li:hover {
   100% {
     transform: translateY(50%);
   }
+}
+
+.background {
+  background-color: #AD0F14;
+  height: 90px;
+  padding: 0 44px;
+}
+
+.menu-item {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.nav-img {
+  display: block;
+  padding-bottom: 30px;
 }

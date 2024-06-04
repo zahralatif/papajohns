@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { fetchData } from "@/utils/fetchData";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = ({ onSelectMenuItem }) => {
   const [menu, setMenu] = useState([]);
@@ -10,7 +12,9 @@ const Header = ({ onSelectMenuItem }) => {
   useEffect(() => {
     const getMenu = async () => {
       try {
-        const response = await fetchData("https://api.mirafgan.me/papajohns/menu");
+        const response = await fetchData(
+          "https://api.mirafgan.me/papajohns/menu"
+        );
         if (response && Array.isArray(response.menu)) {
           setMenu(response.menu);
         } else {
@@ -30,9 +34,31 @@ const Header = ({ onSelectMenuItem }) => {
 
   return (
     <div>
-      <nav className="flex justify-between items-center my-5 mx-20">
-        <div className="logo">PapaJohns</div>
-        <ul className="flex justify-between gap-10">
+      <nav className="flex justify-between items-center my-10 background">
+        <div className="logo">
+          <Image
+            className="nav-img"
+            src="https://www.papajohns.az/img/content/pj_logo_web_new.png"
+            alt="papajohns logo"
+            width="272"
+            height="132"
+          ></Image>
+        </div>
+        {/* <ul className="flex justify-between gap-5">
+          {menu.map((item) => (
+            <li
+              key={item.slug}
+              onClick={() => {
+                console.log(`Menu item clicked: ${item.slug}`);
+                onSelectMenuItem(item.slug);
+              }}
+              className="cursor-pointer menu-item"
+            >
+              {item.name}
+            </li>
+          ))}
+        </ul> */}
+        <ul className="flex justify-between gap-5">
           {menu.map((item) => (
             <li
               key={item.slug}
@@ -42,7 +68,12 @@ const Header = ({ onSelectMenuItem }) => {
               }}
               className="cursor-pointer"
             >
-              {item.name}
+              <Link
+                href={`/menu/${item.slug}`}
+                className="menu-item"
+              >
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
