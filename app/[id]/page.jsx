@@ -6,8 +6,8 @@ import Image from "next/image";
 import Spinner from "../Spinner";
 
 const Home = ({ selectedMenuItem }) => {
-  const [data, setData] = useState();
-  const [error, setError] = useState();
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchDataForDefaultMenu = async () => {
@@ -39,7 +39,6 @@ const Home = ({ selectedMenuItem }) => {
     <div>
       {data ? (
         <div className="menu-detail">
-          {/* <h1>{selectedMenuItem || "Papadias"} Data</h1> */}
           {data.map((item) => (
             <div key={item.id}>
               <Image

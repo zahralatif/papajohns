@@ -44,20 +44,6 @@ const Header = ({ onSelectMenuItem }) => {
             height="132"
           ></Image>
         </div>
-        {/* <ul className="flex justify-between gap-5">
-          {menu.map((item) => (
-            <li
-              key={item.slug}
-              onClick={() => {
-                console.log(`Menu item clicked: ${item.slug}`);
-                onSelectMenuItem(item.slug);
-              }}
-              className="cursor-pointer menu-item"
-            >
-              {item.name}
-            </li>
-          ))}
-        </ul> */}
         <ul className="flex justify-between gap-5">
           {menu.map((item) => (
             <li key={item.slug} className="cursor-pointer menu-item">
